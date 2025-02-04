@@ -43,12 +43,12 @@
                     <tbody>
                         <?php foreach ($all_posts as $post) : ?>
                             <tr>
-                                <td><?= $post['id'] ?></td>
+                                <td><?= $post['post_id'] ?></td>
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $post['content'] ?></td>
                                 <td><?= $post['created_at'] ?></td>
-                                <td><a href="<?= url_to('edit_post', $post['id']) ?>" class="btn btn-primary" style="width: 100%;">Edit</a></td>
-                                <form action="<?= url_to('delete_post', $post['id']) ?>" method="post">
+                                <td><a href="<?= url_to('edit_post', $post['post_id']) ?>" class="btn btn-primary" style="width: 100%;">Edit</a></td>
+                                <form action="<?= url_to('delete_post', $post['post_id']) ?>" method="post">
                                     <td><button name="delete" class="btn btn-danger" style="width: 100%;">Delete</button></td>
                                 </form>
                             </tr>

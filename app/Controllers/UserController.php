@@ -83,14 +83,14 @@ class UserController extends BaseController
                 if ($this->request->getPost('password') == $this->request->getPost('confirmPassword')) {
 
                     if ($this->user->save($data)) {
-                        return redirect()->to(url_to('login'))->with('registrationSucess', 'You have successfully registered, try and login your account');
+                        return redirect()->to(url_to('login'))->with('registrationSuccess', 'You have successfully registered, try and login your account');
                     } else {
                         return redirect()->to(url_to('register'))->with('registrationError', 'Failed to register, try again');
                     }
                 }else {
                     
                     return redirect()->to(url_to('register'))->with('passError', 'password does not match,try again');
-                    // $errordata['passwordError'] = '';
+
                 }
 
 
@@ -153,6 +153,17 @@ class UserController extends BaseController
     
                 // searching for the email in db
                 $email = $this->request->getPost('email');
+
+                // checking if email is in db
+
+                $checkemail = $this->user->findAll();
+
+                foreach ($checkemail as $key) {
+
+                    if ($email !== $key['email']) {
+                        $errors['email_val'] = 'Email is not correct'; 
+                    }
+                }
                 
                 $validateEmail = $this->user->where('email', $email)->find();
     
@@ -160,12 +171,9 @@ class UserController extends BaseController
     
                 foreach ($validateEmail as $key) {
 
-                    if ($email == $key['email']) {
-                        $errors['email_val'] = 'Email is not correct'; 
-                     }
 
                     if (password_verify($this->request->getPost('password'), $key['password'])) {
-                    
+                        
                         $this->session->set([
                             'username' => $key['username'],
                             'email' => $key['email'],
@@ -173,9 +181,11 @@ class UserController extends BaseController
                             'id' => $key['id'],
                             'image' => $key['image']
                         ]);
-        
+                        
                         return redirect()->to(url_to('dashboard'))->with('loggedIn', 'Your have logged In');
                     } else {
+                        
+                         
                         
                         return redirect()->to(url_to('login'))->with('verifyError', 'Wrong password, Try again');
                     }

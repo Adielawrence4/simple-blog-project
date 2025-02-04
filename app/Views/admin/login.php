@@ -14,15 +14,28 @@
 
                         <?php if (session()->getFlashdata('registrationSuccess')) : ?>
                             <div class="d-block" id="submitSuccessMessage">
-                                <div class="text-center text-danger mb-3">
+                                <div class="alert alert-success text-center mb-3">
                                     <?= session()->getFlashdata('registrationSuccess') ?>
                                 </div>
                             </div>
                         <?php endif; ?>
 
-                        <?php if (isset($errors['email'])) : ?>
-                        <div class="alert alert-danger"><?= $errors['email'] ?></div>
+                        <?php if (session()->getFlashdata('verifyError')) : ?>
+                            <div class="d-block" id="submitSuccessMessage">
+                                <div class="alert alert-danger text-center">
+                                    <?= session()->getFlashdata('verifyError') ?>
+                                </div>
+                            </div>
                         <?php endif; ?>
+
+                        <?php if (isset($errors['email'])) : ?>
+                        <div class="alert alert-danger text-center"><?= $errors['email']; ?></div>
+                        <?php endif; ?>
+
+                        <?php if (isset($errors['email_val'])) : ?>
+                        <div class="alert alert-danger text-center"><?= $errors['email_val'] ?></div>
+                        <?php endif; ?>
+
                         <div class="form-floating">
                             <input class="form-control" id="email" name="email" autocomplete="off" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
                             <label for="email">Email address</label>

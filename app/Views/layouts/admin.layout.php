@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/sb-admin/css/sb-admin-2.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>public/assets/sb-admin/css/style.css" />
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +32,7 @@
                     <!-- Sidebar - Brand -->
                     <a
                         class="sidebar-brand d-flex align-items-center justify-content-center"
-                        href="index.html">
+                        href="<?= url_to('dashboard') ?>">
                         <img
                             class="img-profile rounded-circle"
                             src="<?= base_url() ?>public/assets/images/user_profile/<?= $users_info['image'] ?>"
@@ -41,9 +44,9 @@
                     <hr class="sidebar-divider my-0" />
 
                     <!-- Nav Item - Dashboard -->
-                    <li class="nav-item active">
+                    <li class="nav-item <?= url_is('dashboard') ? 'active' : '' ; ?>">
                         <a class="nav-link" href="<?= url_to('dashboard') ?>">
-                            <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <ion-icon name="home-outline" style="transform: translateY(3px);"></ion-icon>
                             <span>Dashboard</span></a>
                     </li>
 
@@ -51,36 +54,36 @@
                     <hr class="sidebar-divider" />
 
                     <!-- Nav Item - Charts -->
-                    <li class="nav-item">
+                    <li class="nav-item <?= url_is('admin.post') ? 'active' : '' ; ?>">
                         <a class="nav-link" href="<?= url_to('admin.post') ?>">
-                            <i class="fas fa-fw fa-chart-area"></i>
+                        <ion-icon name="book-outline"  style="transform: translateY(3px);"></ion-icon>
                             <span>Blog</span></a>
                     </li>
 
                     <hr class="sidebar-divider" />
 
                     <!-- Nav Item - Tables -->
-                    <li class="nav-item">
+                    <li class="nav-item <?= url_is('admin.comment') ? 'active' : '' ; ?>">
                         <a class="nav-link" href="<?= url_to('admin.comment') ?>">
-                            <i class="fas fa-fw fa-table"></i>
+                        <ion-icon name="pricetags-outline"  style="transform: translateY(3px);"></ion-icon>
                             <span>comment</span></a>
                     </li>
 
                     <hr class="sidebar-divider" />
 
                     <!-- Nav Item - contact -->
-                    <li class="nav-item">
+                    <li class="nav-item <?= url_is('admin.contact') ? 'active' : '' ; ?>">
                         <a class="nav-link" href="<?= url_to('admin.contact') ?>">
-                            <i class="fas fa-fw fa-table"></i>
+                        <ion-icon name="call-outline" style="transform: translateY(3px);"></ion-icon>
                             <span>contacts</span></a>
                     </li>
 
                     <hr class="sidebar-divider" />
 
                     <!-- Nav Item - user -->
-                    <li class="nav-item">
+                    <li class="nav-item <?= url_is('admin.user') ? 'active' : '' ; ?>">
                         <a class="nav-link" href="<?= url_to('admin.user') ?>">
-                            <i class="fas fa-fw fa-table"></i>
+                        <ion-icon name="person-add-outline" style="transform: translateY(3px);"></ion-icon>
                             <span>users</span>
                         </a>
                     </li>
@@ -114,7 +117,7 @@
                                         aria-describedby="basic-addon2" />
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
+                                        <ion-icon name="search" class="fs-5" style="transform: translateY(3px);"></ion-icon>
                                         </button>
                                     </div>
                                 </div>
@@ -124,7 +127,7 @@
                             <ul class="navbar-nav ml-auto w-auto">
                                 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 
-                                <a href="<?= url_to('logout') ?>"><img src="<?= base_url() ?>public/assets/images/ui/logout_exit_icon_221144.png" style="width: 40px;" alt=""></a>
+                                <a href="<?= url_to('logout') ?>"><img src="<?= base_url() ?>public/assets/images/ui/power-outline.svg" style="width: 40px;" alt=""></a>
 
                                 <!-- Nav Item - User Information -->
                             </ul>

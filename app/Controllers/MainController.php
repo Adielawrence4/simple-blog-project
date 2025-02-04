@@ -32,11 +32,17 @@ class MainController extends BaseController
     }
 
 
+
     public function home()
     {
-        $view_posts = $this->post->orderBy('id', 'DESC')->limit(10)->findAll();
 
-        $all_posts = $this->post->orderBy('id', 'DESC')->findAll();
+
+        // fetching data from db and also linking two tables to get the user info
+
+        $view_posts = $this->post->join('users', 'users.id = posts.user_id')->orderBy('posts.post_id', 'DESC')->limit(10)->findAll();
+
+        $all_posts = $this->post->join('users', 'users.id = posts.user_id')->orderBy('posts.post_id', 'DESC')->findAll();
+
 
         return view('/main/index', compact('view_posts', 'all_posts'));
     }
@@ -59,23 +65,33 @@ class MainController extends BaseController
     public function post()
     {
 
-        $latest_post = $this->post->orderBy('id', 'DESC')->first();
+        $latest_post = $this->post->orderBy('post_id', 'DESC')->first();
 
+        // getting the authors informations
+        
+        $author = $this->user->where('id', $latest_post['user_id'])->first();
+        
         // viewing all comment on this post
 
-        $comments = $this->comment->where('post_id', $latest_post['id'])->findAll();
+        $comments = $this->comment->where('post_id', $latest_post['post_id'])->findAll();
 
-        return view('/main/post', compact('latest_post', 'comments'));
+        return view('/main/post', compact('latest_post', 'comments', 'author'));
     }
+    
 
     public function view_post($id)
     {
+        
+        // getting the authors informations
+        
+        // $single_post = $this->post->where('posid', $id)->first();
 
-        $single_post = $this->post->where('id', $id)->first();
-
+        $single_post = $this->post->where('posts.post_id', $id)->join('users', 'users.id = posts.user_id')->first();
+        
+        
         // viewing all comment on this post
 
-        $comments = $this->comment->where('post_id', $id)->findAll();
+        $comments = $this->comment->where('id', $id)->findAll();
 
         return view('/main/view', compact('id', 'single_post', 'comments'));
     }

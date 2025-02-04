@@ -7,10 +7,9 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
                         <h1><?= $latest_post['title'] ?></h1>
-                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
                         <span class="meta">
                             Posted by
-                            <a href="#!">Adie Lawrence</a>
+                            <a href="mailto:<?= $author['email'] ?>"><?= $author['name'] ?></a>
                             <?= $latest_post['created_at'] ?>
                         </span>
                     </div>
@@ -38,7 +37,7 @@
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="<?= url_to('add_comment') ?>">
                          
                         <div class="form-floating">
-                            <input type="hidden" name="post_id" value="<?= $latest_post['id'] ?>">
+                            <input type="hidden" name="post_id" value="<?= $latest_post['post_id'] ?>">
                             <textarea class="form-control fs-5" name="comment" id="message" placeholder="Enter your message here..." style="height: 6rem" data-sb-validations="required"></textarea>
                             <label for="message">comment on this post</label>                               
                         </div>

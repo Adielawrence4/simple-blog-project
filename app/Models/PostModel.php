@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PostModel extends Model
 {
     protected $table            = 'posts';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'post_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

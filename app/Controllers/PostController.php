@@ -181,7 +181,7 @@ class PostController extends BaseController
                     'user_id' => $this->session->get('id')
                 ];
 
-                $updated_data = $this->post->where('id', $id)->set($data)->update();
+                $updated_data = $this->post->where('post_id', $id)->set($data)->update();
 
                 if ($updated_data) {
                     return redirect()->to(url_to('admin.post'))->with('postSuccess', 'Post have been add successfully');
@@ -224,7 +224,7 @@ class PostController extends BaseController
             $this->comment->where('post_id', $id)->delete();
 
 
-            $delete_data = $this->post->where('id', $id)->delete();
+            $delete_data = $this->post->where('post_id', $id)->delete();
     
             if ($delete_data) {
                 return redirect()->to(url_to('admin.post'))->with('deleteMessage', "post number ". $id ." has been deleted successfully");

@@ -124,20 +124,7 @@
                         </div>
                         <br />
                         <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
+
                         <!-- an error submitting the form-->
                          <?php if (session()->getFlashdata('registrationError')) : ?>
                         <div class="d-block" id="submitErrorMessage">
@@ -166,7 +153,7 @@
                         </button>
                     </form>
                     <h5 class="text-uppercase text-center mt-4">
-                        Don't have an account? <a href="login.html" class="link-primary">sign in</a>
+                        Don't have an account? <a href="<?= url_to('login') ?>" class="link-primary">sign in</a>
                     </h5>
                 </div>
             </div>

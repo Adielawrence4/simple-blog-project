@@ -21,20 +21,23 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
             <!-- Post preview-->
             <?php foreach ($all_posts as $post) : ?>
+            <?php foreach ($author as $$author) : ?>
             <!-- Post preview-->
             <div class="post-preview mt-5">
-                <a href="<?= url_to('view', $post['id']) ?>">
+                <a href="<?= url_to('view', $post['post_id']) ?>">
                     <h2 class="post-title"><?= $post['title'] ?></h2>
                     <!-- <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3> -->
                 </a>
                 <p class="post-meta">
                     Posted by
-                    <a href="tel:+2348112489326">Adie Lawrence</a>
+                    
+                    <a href="mailto:<?= $post['email'] ?>"><?= $post['name'] ?></a>
                     <?= $post['created_at'] ?>
                 </p>
             </div>
             <!-- Divider-->
             <hr class="my-4" />
+            <?php endforeach; ?>
             <?php endforeach; ?>
             <!-- Post preview-->
             <!-- <div class="post-preview">
@@ -72,15 +75,15 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <!-- Post preview-->
                 <?php foreach ($view_posts as $post) : ?>
-                <!-- Post preview-->
-                <div class="post-preview mt-5">
-                    <a href="<?= url_to('view', $post['id']) ?>">
+                    <!-- Post preview-->
+                    <div class="post-preview mt-5">
+                        <a href="<?= url_to('view', $post['post_id']) ?>">
                         <h2 class="post-title"><?= $post['title'] ?></h2>
                         <!-- <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3> -->
                     </a>
                     <p class="post-meta">
                         Posted by
-                        <a href="tel:+2348112489326">Adie Lawrence</a>
+                        <a href="mailto:<?= $post['email'] ?>"><?= $post['name'] ?></a>
                         <?= $post['created_at'] ?>
                     </p>
                 </div>

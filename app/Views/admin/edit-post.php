@@ -14,7 +14,7 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="<?= url_to('edit_post', $post['id']) ?>" enctype="multipart/form-data">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="<?= url_to('edit_post', $post['post_id']) ?>" enctype="multipart/form-data">
                         <div class="form-floating ">
                             <input autocomplete="off" class="form-control" id="name" name="title" type="text" value="<?= $post['title'] ?>" data-sb-validations="required" />
                             <label for="name">Title</label>

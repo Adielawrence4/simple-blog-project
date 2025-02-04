@@ -9,7 +9,7 @@ class PostMigration extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'post_id' => [
                 'type' => 'int',
                 'unsigned' => true,
                 'auto_increment' => true 
@@ -40,7 +40,7 @@ class PostMigration extends Migration
 
         ]);
 
-        $this->forge->addPrimaryKey('id');
+        $this->forge->addPrimaryKey('post_id');
         $this->forge->createTable('posts');
 
     }
