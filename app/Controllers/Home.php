@@ -37,10 +37,6 @@ class Home extends BaseController
     public function dashboard() 
     {
 
-        // to view the user info like image 
-        $users_info = $this->user->find($this->session->get('id'));
-
-
         // counting each column and display the total
 
         $total_comment = $this->comment->findAll();
@@ -54,7 +50,7 @@ class Home extends BaseController
         if ($this->session->has('id') == false) {
             return redirect()->to(url_to('404'));
         } else {          
-            return view('admin/dashboard', compact('users_info', 'total_comment', 'total_user', 'total_post', 'total_contact'));
+            return view('admin/dashboard', compact('total_comment', 'total_user', 'total_post', 'total_contact'));
         }
         
     }

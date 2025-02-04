@@ -18,6 +18,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
 </head>
 
 <body>
@@ -32,10 +34,10 @@
                     <!-- Sidebar - Brand -->
                     <a
                         class="sidebar-brand d-flex align-items-center justify-content-center"
-                        href="<?= url_to('dashboard') ?>">
+                        href="<?= url_to('profile') ?>">
                         <img
                             class="img-profile rounded-circle"
-                            src="<?= base_url() ?>public/assets/images/user_profile/<?= $users_info['image'] ?>"
+                            src="<?= base_url() ?>public/assets/images/user_profile/<?= session()->get('image') ?>"
                             style="width: 50px; height: 50px;" />
                         <div class="sidebar-brand-text mx-3">SB Admin</div>
                     </a>
@@ -146,6 +148,8 @@
         </div>
 
         <script src="<?= base_url() ?>public/assets/Bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     </body>
 
 </html>

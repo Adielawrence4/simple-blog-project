@@ -65,3 +65,84 @@ ul li:hover, a:focus {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.card-profile {
+    width: 850px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 70px;
+}
+
+.image-profile img {
+    transition: all 0.5s
+}
+
+.card:hover .image-profile img {
+    transform: scale(1.5)
+}
+
+.btn-profile {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%
+}
+
+.name-profile {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.idd-profile {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.idd1-profile {
+    font-size: 12px
+}
+
+.number-profile {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.follow-profile {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444444
+}
+
+.btn-profile-1 {
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #000;
+    color: #aeaeae;
+    font-size: 15px
+}
+
+.text-profile span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+
+.icons-profile i {
+    font-size: 19px
+}
+
+hr .new-profile-1 {
+    border: 1px solid
+}
+
+.join-profile {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: bold
+}
+
+.date-profile {
+    background-color: #ccc
+}

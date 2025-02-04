@@ -24,7 +24,7 @@ class ContactsController extends BaseController
 
     public function admin_contact()  {
 
-        $users_info = $this->user->find($this->session->get('id'));
+
 
         // fetching all contacts from db
 
@@ -36,7 +36,7 @@ class ContactsController extends BaseController
             return redirect()->to(url_to('404'));
         } else {          
             
-            return view('/admin/contact', compact('users_info', 'all_contacts'));
+            return view('/admin/contact', compact('all_contacts'));
         }
     }
     

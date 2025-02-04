@@ -27,7 +27,6 @@ class PostController extends BaseController
 
     public function create()
     {
-        $users_info = $this->user->find($this->session->get('id'));
 
 
         // validating the create post
@@ -54,7 +53,7 @@ class PostController extends BaseController
                 {
                     if ($image_file == '') {
 
-                        return 'empty';
+                        return '';
                     } else {
 
                         $fileName = $image_file->getName();
@@ -93,7 +92,7 @@ class PostController extends BaseController
             return redirect()->to(url_to('404'));
         } else {          
             
-            return view('/admin/add-post', compact('users_info', 'errors'));
+            return view('/admin/add-post', compact('errors'));
         }
 
     }
@@ -101,7 +100,6 @@ class PostController extends BaseController
     public function list_post()
     {
 
-        $users_info = $this->user->find($this->session->get('id'));
 
         // fetching all post from db
 
@@ -110,7 +108,7 @@ class PostController extends BaseController
         if ($this->session->has('id') == false) {
             return redirect()->to(url_to('404'));
         } else {          
-            return view('admin/post', compact('users_info', 'all_posts'));
+            return view('admin/post', compact('all_posts'));
             
         }
 
@@ -120,7 +118,6 @@ class PostController extends BaseController
     public function update($id)
     {
 
-        $users_info = $this->user->find($this->session->get('id'));
 
 
         $post = $this->post->find($id);
@@ -154,23 +151,27 @@ class PostController extends BaseController
                     } else {
 
 
-
-
+                        
+                        
                         $fileName = $image_file->getName();
-
+                        
                         $fileNamechange = explode('.', $fileName);
-
+                        
                         $newFileName = random_int(1000000, 9999999) . '-' .  'post' . '-' . time() . '.' . end($fileNamechange);
-
+                        
                         $image_file->move('public/assets/images/post', $newFileName);
-
-                        if (file_exists($folder . $delete_image)) {
+                        
+                        
+                        
+                        
+                        if (file_exists($folder . $delete_image) == false) {
 
                             unlink($folder . $delete_image);
-                        } else {
+                        }else {
 
                             return $newFileName;
-                        }
+                        };
+                        
                     }
                 }
 
@@ -200,7 +201,7 @@ class PostController extends BaseController
             return redirect()->to(url_to('404'));
         } else {          
             
-            return view('/admin/edit-post', compact('id', 'users_info', 'post', 'errors'));
+            return view('/admin/edit-post', compact('id', 'post', 'errors'));
         }
     }
 

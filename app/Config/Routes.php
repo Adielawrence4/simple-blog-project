@@ -48,6 +48,13 @@ $routes->get('/register', 'UserController::register', ['as' => 'register']);
 $routes->post('/register', 'UserController::register');
 
 
+// Profile
+
+$routes->get('/profile', 'UserController::profile', ['as' => 'profile']);
+$routes->get('/edit-profile', 'UserController::edit_profile', ['as' => 'edit-profile']);
+$routes->post('/edit-profile', 'UserController::edit_profile', ['as' => 'edit-profile']);
+
+
 //  log out
 
 $routes->get('/logout', 'UserController::logout', ['as' => 'logout']);

@@ -22,7 +22,15 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-10 fs-3">
-                    <?= $latest_post['content'] ?>
+
+                        <?php if ($latest_post['image'] !== "") : ?>
+                        <img src="<?= base_url() ?>public/assets/images/post/<?= $latest_post['image'] ?>" style="width: 950px; height: 400px;" class="mb-4">
+                        <?php endif; ?>    
+
+                        <div>
+                            <?= $latest_post['content'] ?>
+
+                        </div>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-10 mt-5">
                     <h1 class="h1 ">comments</h1>

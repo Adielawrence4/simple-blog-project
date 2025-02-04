@@ -83,9 +83,6 @@ class CommentController extends BaseController
 
     public function view_comment()
     {
-
-        $users_info = $this->user->find($this->session->get('id'));
-
         // fetching all comments from db
         $all_comments = $this->comment->findAll();
 
@@ -94,7 +91,7 @@ class CommentController extends BaseController
             return redirect()->to(url_to('404'));
         } else {          
             
-            return view('/admin/comment', compact('users_info', 'all_comments'));
+            return view('/admin/comment', compact( 'all_comments'));
         }
 
     }

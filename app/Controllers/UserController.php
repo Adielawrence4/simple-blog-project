@@ -182,7 +182,7 @@ class UserController extends BaseController
                             'image' => $key['image']
                         ]);
                         
-                        return redirect()->to(url_to('dashboard'))->with('loggedIn', 'Your have logged In');
+                        return redirect()->to(url_to('dashboard'))->with('loggedIn', 'Welcome '. $key['name'] .' to your dashboard');
                     } else {
                         
                          
@@ -207,7 +207,91 @@ class UserController extends BaseController
         
     }
 
-    public function profile() {}
+    public function profile() {
+        
+
+
+        if ($this->session->has('id') == false) {
+            return redirect()->to(url_to('404'));
+        } else {          
+            return view('/admin/profile', compact('users_info'));
+        }
+    }
+    
+    public function edit_profile() {
+
+        $errordata = [];
+
+        if (isset($_POST['submit'])) {
+            
+            $rules = [
+                'name' => 'required',
+                'username' => 'required',
+                'email' => 'required|valid_email',
+                
+            ];
+
+            if ($this->validate($rules)) {
+                
+                // Updating Image
+                $image = $this->request->getFile('image');
+
+
+                function control_image($image)
+                {
+                    $image_name = $image->getName();
+
+                    $seperatingImageName = explode('.', $image_name);
+
+                    $newName = time() . '-' . 'Avatar' . '-' . rand(1000000, 9999999) . '.' . end($seperatingImageName);
+
+                    if ($image == '') {
+                        return 'undraw_profile.svg';
+                    } else {
+
+                        $image->move('public/assets/images/user_profile', $newName);
+
+                        return $newName;
+                    }
+                }
+
+                // Updating all data
+
+                $data = [
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'username' => $this->request->getPost('username'),
+                    'image' => control_image($image)
+                ];
+
+                $saveUpdate = $this->user->where('id', $this->session->get('id'))->set($data)->update();
+
+                if ($saveUpdate) {
+                    return redirect()->to(url_to('logout'));
+                } else {
+                    return redirect()->to(url_to('edit-profile'))->with('profile_update_failed', 'profile is not updated. Try again');                    
+                }
+                
+
+
+            } else {
+                
+                $errordata['name'] = $this->validator->getError('name');
+                $errordata['username'] = $this->validator->getError('username');
+                $errordata['email'] = $this->validator->getError('email');
+            }
+            
+        }
+        
+
+
+        
+        if ($this->session->has('id') == false) {
+            return redirect()->to(url_to('404'));
+        } else {          
+            return view('/admin/edit-profile');
+        }
+    }
 
     public function logout() {
 
@@ -222,7 +306,7 @@ class UserController extends BaseController
 
     public function admin_user() {
 
-        $users_info = $this->user->find($this->session->get('id'));
+
 
         // to fetch all users
         $all_users = $this->user->findAll();
@@ -232,7 +316,7 @@ class UserController extends BaseController
         if ($this->session->has('id') == false) {
             return redirect()->to(url_to('404'));
         } else {          
-            return view('/admin/user', compact('users_info', 'all_users'));
+            return view('/admin/user', compact('all_users'));
         }
     }
 }
