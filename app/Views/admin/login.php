@@ -70,7 +70,10 @@
                             <div class="text-center text-danger mb-3">Error sending message!</div>
                         </div>
                         <!-- Submit Button-->
-                        <button class="btn btn-primary text-uppercase" id="submitButton" name="submit" type="submit">Submit</button>
+                        <button class="btn btn-primary text-uppercase" type="submit" name="submit">
+                            submit
+                        </button> 
+                                           
                     </form>
                     <h6 class="text-uppercase text-center mt-4">
                         Don't have an account? <a href="<?= url_to('register') ?>" class="link-primary">sign up here</a>

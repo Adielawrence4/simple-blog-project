@@ -146,7 +146,6 @@
                         <!-- Submit Button-->
                         <button
                             class="btn btn-primary text-uppercase"
-                            id="submitButton"
                             type="submit" 
                             name="submit">
                             submit

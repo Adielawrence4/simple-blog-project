@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Images</th>
                             <th>Title</th>
                             <th>Content</th>
                             <th>Created_at</th>
@@ -33,6 +34,7 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
+                            <th>Images</th>
                             <th>Title</th>
                             <th>Content</th>
                             <th>Created_at</th>
@@ -44,6 +46,7 @@
                         <?php foreach ($all_posts as $post) : ?>
                             <tr>
                                 <td><?= $post['post_id'] ?></td>
+                                <td><img src="<?= base_url() ?>public/assets/images/post/<?= $post['image'] ?>" alt="" style="width: 40px; height: 40px;"></td>
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $post['content'] ?></td>
                                 <td><?= $post['created_at'] ?></td>

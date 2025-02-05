@@ -164,7 +164,7 @@ class PostController extends BaseController
                         
                         
                         
-                        if (file_exists($folder . $delete_image) == false) {
+                        if (!file_exists($folder . $delete_image) == false) {
 
                             unlink($folder . $delete_image);
                         }else {
@@ -215,7 +215,7 @@ class PostController extends BaseController
 
         if (isset($_POST['delete'])) {
 
-            if (file_exists($folder . $delete['image'])) {
+            if (!file_exists($folder . $delete['image'])) {
             
                 unlink($folder . $delete['image']);
             }
