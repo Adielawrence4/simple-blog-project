@@ -37,7 +37,7 @@
                         <?php endif; ?>
 
                         <div class="form-floating">
-                            <input class="form-control" id="email" name="email" autocomplete="off" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
+                            <input class="form-control" id="email" name="email" autocomplete="off" type="text" placeholder="Enter your email..." data-sb-validations="required,email" />
                             <label for="email">Email address</label>
                             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>

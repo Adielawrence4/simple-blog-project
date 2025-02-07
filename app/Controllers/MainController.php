@@ -84,18 +84,15 @@ class MainController extends BaseController
         
         // getting the authors informations
         
-        // $single_post = $this->post->where('posid', $id)->first();
 
         $single_post = $this->post->where('posts.post_id', $id)->join('users', 'users.id = posts.user_id')->first();
 
         $get_image = $this->post->where('post_id', $id)->first();
         
         
-        // viewing all comment on this post
 
-        $comments = $this->comment->where('id', $id)->findAll();
+        $comments = $this->comment->where('post_id', $id)->findAll();
 
-        // var_dump($get_image['image']);
 
         return view('/main/view', compact('id', 'single_post', 'comments', 'get_image'));
     }
