@@ -117,3 +117,101 @@ INFO - 2025-02-15 21:50:20 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-02-15 21:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-02-15 21:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-02-15 21:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 22:59:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-15 23:01:38 --> ErrorException: compact(): Undefined variable $users_info
+[Method: GET, Route: profile]
+in APPPATH\Controllers\UserController.php on line 217.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'compact(): Undefined variable $users_info', 'C:\\xampp\\htdocs\\simple-blog\\app\\Controllers\\UserController.php', 217)
+ 2 APPPATH\Controllers\UserController.php(217): compact('users_info')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-15 23:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-15 23:03:40 --> ErrorException: Undefined variable $users_info
+[Method: GET, Route: profile]
+in APPPATH\Views\admin\profile.php on line 14.
+ 1 APPPATH\Views\admin\profile.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users_info', 'C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/profile', [], true)
+ 5 APPPATH\Controllers\UserController.php(217): view('/admin/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-15 23:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-15 23:03:42 --> ErrorException: Undefined variable $users_info
+[Method: GET, Route: profile]
+in APPPATH\Views\admin\profile.php on line 14.
+ 1 APPPATH\Views\admin\profile.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users_info', 'C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/profile', [], true)
+ 5 APPPATH\Controllers\UserController.php(217): view('/admin/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-15 23:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-15 23:03:47 --> ErrorException: Undefined variable $users_info
+[Method: GET, Route: profile]
+in APPPATH\Views\admin\profile.php on line 14.
+ 1 APPPATH\Views\admin\profile.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users_info', 'C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php', 14)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/profile', [], true)
+ 5 APPPATH\Controllers\UserController.php(217): view('/admin/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-15 23:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-15 23:06:41 --> ErrorException: Undefined variable $users_info
+[Method: GET, Route: profile]
+in APPPATH\Views\admin\profile.php on line 17.
+ 1 APPPATH\Views\admin\profile.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users_info', 'C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php', 17)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\simple-blog\\app\\Views\\admin\\profile.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/admin/profile', [], true)
+ 5 APPPATH\Controllers\UserController.php(217): view('/admin/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-15 23:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-15 23:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

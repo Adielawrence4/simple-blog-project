@@ -214,7 +214,7 @@ class UserController extends BaseController
         if ($this->session->has('id') == false) {
             return redirect()->to(url_to('404'));
         } else {          
-            return view('/admin/profile', compact('users_info'));
+            return view('/admin/profile');
         }
     }
     
