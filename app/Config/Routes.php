@@ -93,6 +93,7 @@ $routes->get('/admin/comment', 'commentController::view_comment', ['as' => 'admi
 
 $routes->post('add_comment', 'commentController::add', ['as' => 'add_comment']);
 $routes->post('add_view_comment/(:num)', 'commentController::addCommentInView/$1', ['as' => 'add_view_comment']);
+$routes->post('delete_comment/(:num)', 'commentController::delete_comment/$1', ['as' => 'delete_comment']);
 
 
 

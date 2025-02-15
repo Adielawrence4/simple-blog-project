@@ -95,4 +95,26 @@ class CommentController extends BaseController
         }
 
     }
+
+
+    public function delete_comment($id) {
+        
+
+        if (isset($_POST['delete'])) {
+            
+            $comment = $this->comment->where('id', $id)->delete();
+            if ($comment) {
+                return redirect()->to(url_to('admin.comment'))->with('deletedCommentSuccessfully', 'Comment number '. $id .' has been deleted successfully');
+            }else {
+                
+                return redirect()->to(url_to('admin.comment'))->with('deleteCommentFailed', 'Failed to delete comment number '. $id .'. Try again');
+            }
+
+        } else {
+            return redirect()->to(url_to('admin.comment'))->with('deleteCommentFailed', 'Failed to delete comment number '. $id .'. Try again');
+        }
+        
+
+        return view('/admin/comment');
+    }
 }

@@ -46,7 +46,11 @@
                         <?php foreach ($all_posts as $post) : ?>
                             <tr>
                                 <td><?= $post['post_id'] ?></td>
-                                <td><img src="<?= base_url() ?>public/assets/images/post/<?= $post['image'] ?>" alt="" style="width: 40px; height: 40px;"></td>
+                                <?php if (empty($post['image'])) : ?>
+                                    <td><h6>No Image found</h6></td>
+                                    <?php else : ?>
+                                        <td><img src="<?= base_url() ?>public/assets/images/post/<?= $post['image'] ?>" alt="" style="width: 40px; height: 40px;"></td>
+                                    <?php endif; ?>
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $post['content'] ?></td>
                                 <td><?= $post['created_at'] ?></td>
