@@ -39,7 +39,7 @@ class MainController extends BaseController
 
         // fetching data from db and also linking two tables to get the user info
 
-        $view_posts = $this->post->join('users', 'users.id = posts.user_id')->orderBy('posts.post_id', 'DESC')->limit(10)->findAll();
+        $view_posts = $this->post->join('users', 'users.id = posts.user_id')->orderBy('posts.post_id', 'DESC')->findAll();
 
         $all_posts = $this->post->join('users', 'users.id = posts.user_id')->orderBy('posts.post_id', 'DESC')->findAll();
 
